@@ -22,6 +22,14 @@
     <span style="color: red;">[{{ error }}]</span>
     {% endfor %}
   </p>
+  <p>
+    {{ form.affirmative_title.label }}<br>
+    {{ form.affirmative_title(size=32) }}
+  </p>
+  <p>
+    {{ form.negative_title.label }}<br>
+    {{ form.negative_title(size=32) }}
+  </p>
   <p>{{ form.submit() }}</p>
 </form>
 {% endblock %}
