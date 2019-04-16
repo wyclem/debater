@@ -90,11 +90,11 @@ def create_debate():
     if form.validate_on_submit():
         second_debater = User.query.filter_by(username=form.second_debater.data).first()
         if form.user_role.data == "affirmative":
-            debate = Debate(topic=form.topic.data, affirmative=current_user, negative=second_debater, affirmative_title=affirmative_title.data, negative_title=negative_title.data)
+            debate = Debate(topic=form.topic.data, affirmative=current_user, negative=second_debater, affirmative_title=form.affirmative_title.data, negative_title=form.negative_title.data)
             db.session.add(debate)
             db.session.commit()
         elif form.user_role.data == "negative":
-            debate = Debate(topic=form.topic.data, affirmative=second_debater, negative=current_user, affirmative_title=affirmative_title.data, negative_title=negative_title.data)
+            debate = Debate(topic=form.topic.data, affirmative=second_debater, negative=current_user, affirmative_title=form.affirmative_title.data, negative_title=form.negative_title.data)
             db.session.add(debate)
             db.session.commit()
         return redirect(url_for('debate', id=debate.id))
