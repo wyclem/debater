@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Welcome to Debater!</h1>
+  <h2>Active Debates</h2>
+  {% for d in debates %}
+  {% if d.affirmative_rejoinder == None %}
+  <p><a href="{{ url_for('debate', id=d.id) }}">{{ d.topic }}</a></p>
+  {% endif %}
+  {% endfor %}
+  <h2>Completed Debates</h2>
+  {% for d in debates %}
+  {% if d.affirmative_rejoinder != None %}
+  <p><a href="{{ url_for('debate', id=d.id) }}">{{ d.topic }}</a></p>
+  {% endif %}
+  {% endfor %}
+{% endblock %}
