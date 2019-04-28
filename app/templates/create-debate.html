@@ -2,6 +2,7 @@
 
 {% block content %}
 <h1>Create a Debate</h1>
+<div class="create">
 <form action="" method="post">
   {{ form.hidden_tag() }}
   <p>
@@ -32,4 +33,5 @@
   </p>
   <p>{{ form.submit() }}</p>
 </form>
+</div>
 {% endblock %}

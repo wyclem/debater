@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  padding: 0;
+  border-width: 0;
+  box-sizing: border-box;
+  font-family: Tahoma, Geneva, sans-serif;
+}
+
+h1 {
+  padding-left: 1%;
+}
+
+a {
+  text-decoration: none;
+}
+
+body .nav {
+  background-color: black;
+  color: white;
+  font-size: 25px;
+  padding: 1%;
+}
+
+.nav a {
+  color: white;
+  border-right-style: solid;
+  border-right-color: white;
+  border-right-width: medium;
+  padding-right: 1%;
+  padding-left: 1%;
+}
+
+.nav a:hover {
+  color: rgb(119, 136, 153);
+}
+
+.active-debates, .affirmative, .login, .register, .create {
+  display: inline-block;
+  width: 46%;
+  vertical-align: text-top;
+  margin-right: 2%;
+  margin-left: 1%;
+  padding-left: 1%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.completed-debates, .negative {
+  display: inline-block;
+  width: 46%;
+  vertical-align: text-top;
+  padding-left: 1%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.active-debates, .completed-debates, .login, .register, .create {
+  background-color: rgba(119, 136, 153, 0.5);
+}
+
+.active-debates a, .completed-debates a, .login a {
+  color: black;
+}
+
+.active-debates a:hover, .completed-debates a:hover, .login a:hover {
+  color: white;
+}
+
+.affirmative {
+  background-color: rgba(136, 206, 250, 0.5);
+  margin-bottom: 2%;
+}
+
+.negative {
+  background-color: rgba(218, 112, 214, 0.5);
+  margin-bottom: 2%;
+}
+
+.active-debates h2, .completed-debates h2, .affirmative h2, .negative h2 {
+  font-size: 25px;
+}
+
+.active-debates p, .completed-debates p, .affirmative p, .negative p, .login p, .register p, .create p {
+  font-size: 18px;
+  line-height: 1.6;
+}

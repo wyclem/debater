@@ -2,16 +2,20 @@
 
 {% block content %}
   <h1>Welcome to Debater!</h1>
+  <div class="active-debates">
   <h2>Active Debates</h2>
   {% for d in debates %}
   {% if d.affirmative_rejoinder == None %}
   <p><a href="{{ url_for('debate', id=d.id) }}">{{ d.topic }}</a></p>
   {% endif %}
   {% endfor %}
+  </div>
+  <div class="completed-debates">
   <h2>Completed Debates</h2>
   {% for d in debates %}
   {% if d.affirmative_rejoinder != None %}
   <p><a href="{{ url_for('debate', id=d.id) }}">{{ d.topic }}</a></p>
   {% endif %}
   {% endfor %}
+  </div>
 {% endblock %}
