@@ -6,110 +6,120 @@
   {% if round > 1 %}
   <h2>{{ debate.affirmative_title }} Constructive</h2>
   <p><b>{{ debate.affirmative.username }}: </b>{{ debate.affirmative_constructive }}</p>
-  {% elif current_debater == current_user %}
-  <h2>{{ debate.affirmative_title }} Constructive</h2>
-  <form action="" method="post" novalidate>
-    {{ form.hidden_tag() }}
-    <p>
-      {{ form.argument.label }}<br>
-      {{ form.argument(cols=50, rows=4) }}<br>
-      {% for error in form.argument.errors %}
-      <span style="color: red;">[{{ error }}]</span>
-      {% endfor %}
-    </p>
-    <p>{{ form.submit() }}</p>
-  </form>
-  {% elif current_debater != None %}
-  <h2>{{ debate.affirmative_title }} Constructive</h2>
-  <p>Waiting on response...</p>
+  {% else %}
+    {% if current_debater == current_user and round == 1 %}
+    <h2>{{ debate.affirmative_title }} Constructive</h2>
+    <form action="" method="post" novalidate>
+      {{ form.hidden_tag() }}
+      <p>
+        {{ form.argument.label }}<br>
+        {{ form.argument(cols=50, rows=4) }}<br>
+        {% for error in form.argument.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+      </p>
+      <p>{{ form.submit() }}</p>
+    </form>
+    {% else %}
+    <h2>{{ debate.affirmative_title }} Constructive</h2>
+    <p>Waiting on response...</p>
+    {% endif %}
   {% endif %}
   </div>
   <div class="negative">
   {% if round > 2 %}
   <h2>{{ debate.negative_title }} Constructive</h2>
   <p><b>{{ debate.negative.username }}: </b>{{ debate.negative_constructive }}</p>
-  {% elif current_debater == current_user %}
-  <h2>{{ debate.negative_title }} Constructive</h2>
-  <form action="" method="post" novalidate>
-    {{ form.hidden_tag() }}
-    <p>
-      {{ form.argument.label }}<br>
-      {{ form.argument(cols=50, rows=4) }}<br>
-      {% for error in form.argument.errors %}
-      <span style="color: red;">[{{ error }}]</span>
-      {% endfor %}
-    </p>
-    <p>{{ form.submit() }}</p>
-  </form>
-  {% elif current_debater != None %}
-  <h2>{{ debate.negative_title }} Constructive</h2>
-  <p>Waiting on response...</p>
+  {% else %}
+    {% if current_debater == current_user and round == 2 %}
+    <h2>{{ debate.negative_title }} Constructive</h2>
+    <form action="" method="post" novalidate>
+      {{ form.hidden_tag() }}
+      <p>
+        {{ form.argument.label }}<br>
+        {{ form.argument(cols=50, rows=4) }}<br>
+        {% for error in form.argument.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+      </p>
+      <p>{{ form.submit() }}</p>
+    </form>
+    {% else %}
+    <h2>{{ debate.negative_title }} Constructive</h2>
+    <p>Waiting on response...</p>
+    {% endif %}
   {% endif %}
   </div>
   <div class="affirmative">
   {% if round > 3 %}
   <h2>{{ debate.affirmative_title }} Rebuttal</h2>
   <p><b>{{ debate.affirmative.username }}: </b>{{ debate.affirmative_rebuttal }}</p>
-  {% elif current_debater == current_user %}
-  <h2>{{ debate.affirmative_title }} Rebuttal</h2>
-  <form action="" method="post" novalidate>
-    {{ form.hidden_tag() }}
-    <p>
-      {{ form.argument.label }}<br>
-      {{ form.argument(cols=50, rows=4) }}<br>
-      {% for error in form.argument.errors %}
-      <span style="color: red;">[{{ error }}]</span>
-      {% endfor %}
-    </p>
-    <p>{{ form.submit() }}</p>
-  </form>
-  {% elif current_debater != None %}
-  <h2>{{ debate.affirmative_title }} Rebuttal</h2>
-  <p>Waiting on response...</p>
+  {% else %}
+    {% if current_debater == current_user and round == 3 %}
+    <h2>{{ debate.affirmative_title }} Rebuttal</h2>
+    <form action="" method="post" novalidate>
+      {{ form.hidden_tag() }}
+      <p>
+        {{ form.argument.label }}<br>
+        {{ form.argument(cols=50, rows=4) }}<br>
+        {% for error in form.argument.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+      </p>
+      <p>{{ form.submit() }}</p>
+    </form>
+    {% else %}
+    <h2>{{ debate.affirmative_title }} Rebuttal</h2>
+    <p>Waiting on response...</p>
+    {% endif %}
   {% endif %}
   </div>
   <div class="negative">
   {% if round > 4 %}
   <h2>{{ debate.negative_title }} Rebuttal</h2>
   <p><b>{{ debate.negative.username }}: </b>{{ debate.negative_rebuttal }}</p>
-  {% elif current_debater == current_user %}
-  <h2>{{ debate.negative_title }} Rebuttal</h2>
-  <form action="" method="post" novalidate>
-    {{ form.hidden_tag() }}
-    <p>
-      {{ form.argument.label }}<br>
-      {{ form.argument(cols=50, rows=4) }}<br>
-      {% for error in form.argument.errors %}
-      <span style="color: red;">[{{ error }}]</span>
-      {% endfor %}
-    </p>
-    <p>{{ form.submit() }}</p>
-  </form>
-  {% elif current_debater != None %}
-  <h2>{{ debate.negative_title }} Rebuttal</h2>
-  <p>Waiting on response...</p>
+  {% else %}
+    {% if current_debater == current_user and round == 4 %}
+    <h2>{{ debate.negative_title }} Rebuttal</h2>
+    <form action="" method="post" novalidate>
+      {{ form.hidden_tag() }}
+      <p>
+        {{ form.argument.label }}<br>
+        {{ form.argument(cols=50, rows=4) }}<br>
+        {% for error in form.argument.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+      </p>
+      <p>{{ form.submit() }}</p>
+    </form>
+    {% else %}
+    <h2>{{ debate.negative_title }} Rebuttal</h2>
+    <p>Waiting on response...</p>
+    {% endif %}
   {% endif %}
   </div>
   <div class="affirmative">
   {% if round > 5 %}
   <h2>{{ debate.affirmative_title }} Rejoinder</h2>
   <p><b>{{ debate.affirmative.username }}: </b>{{ debate.affirmative_rejoinder }}</p>
-  {% elif current_debater == current_user %}
-  <h2>{{ debate.affirmative_title }} Rejoinder</h2>
-  <form action="" method="post" novalidate>
-    {{ form.hidden_tag() }}
-    <p>
-      {{ form.argument.label }}<br>
-      {{ form.argument(cols=50, rows=4) }}<br>
-      {% for error in form.argument.errors %}
-      <span style="color: red;">[{{ error }}]</span>
-      {% endfor %}
-    </p>
-    <p>{{ form.submit() }}</p>
-  </form>
-  {% elif current_debater != None %}
-  <h2>{{ debate.affirmative_title }} Rejoinder</h2>
-  <p>Waiting on response...</p>
+  {% else %}
+    {% if current_debater == current_user and round == 5 %}
+    <h2>{{ debate.affirmative_title }} Rejoinder</h2>
+    <form action="" method="post" novalidate>
+      {{ form.hidden_tag() }}
+      <p>
+        {{ form.argument.label }}<br>
+        {{ form.argument(cols=50, rows=4) }}<br>
+        {% for error in form.argument.errors %}
+        <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+      </p>
+      <p>{{ form.submit() }}</p>
+    </form>
+    {% else %}
+    <h2>{{ debate.affirmative_title }} Rejoinder</h2>
+    <p>Waiting on response...</p>
+    {% endif %}
   {% endif %}
   </div>
 {% endblock %}

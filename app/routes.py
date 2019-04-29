@@ -1,7 +1,7 @@
 from flask import render_template, flash, redirect, request, url_for
 from app import app, db
 from app.forms import DebaterForm, LoginForm, RegistrationForm, CreateDebateForm
-from flask_login import current_user, login_user, logout_user
+from flask_login import current_user, login_user, logout_user, login_required
 from app.models import User, Debate
 from werkzeug.urls import url_parse
 
@@ -22,7 +22,10 @@ def login():
             flash('Invalid username or password')
             return redirect(url_for('login'))
         login_user(user)
-        return redirect(url_for('index'))
+        next_page = request.args.get('next')
+        if not next_page or url_parse(next_page).netloc != '':
+            return redirect(url_for('index'))
+        return redirect(next_page)
     return render_template('login.html', title='Sign In', form=form)
 
 @app.route('/logout')
@@ -85,6 +88,7 @@ def debate(id):
     return render_template('debate.html', debate=debate, title="Debate", form=form, round=round, current_debater=current_debater)
 
 @app.route('/create-debate', methods=['GET', 'POST'])
+@login_required
 def create_debate():
     form = CreateDebateForm()
     if form.validate_on_submit():
